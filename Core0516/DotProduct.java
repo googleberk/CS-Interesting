@@ -1,13 +1,14 @@
 // Goal: this code shows how to do the dot product
 // of two vectors stored in two int[]
-
+package Core0516;
 
 public class DotProduct{
 
     /**
      *
      * The dot product of two vectors a = [a1, a2, …, an]
-     * and b = [b1, b2, …, bn] is defined:
+     * and b = [b1, b2, …, bn] is defined as the sum of ai * bi
+     * for i = 0 to i = n(for all i)
      *
      */
 
@@ -22,13 +23,13 @@ public class DotProduct{
 
     /*
     Note: try to implement this using recursion. AND Higher-Order-Functions by passing
-           a function object f, which makes a becomes a[1:]
+           a function object f, which slices a into a[1:].
      */
 
     /*
-    Note2: we could just use instantiate a new Slicing(), but in order not to change this frequently,
+    Note2: we could just instantiate a new Slicing(), but in order not to change this frequently,
     (next time, you want to apply a different unary mapping, you don't need to change the instantiation
-    code if you use a higher interface called IntUnaryFunction and with new IntUnaryFunction();
+    code if you use a higher interface called IntUnaryFunction and with [code: new IntUnaryFunction()];
      */
 
     public static int dotProductHR(int[] a, int[] b, Slicing f){
@@ -42,7 +43,7 @@ public class DotProduct{
         int[] a = {1, 2};
         int[] b = {5, 6};
         System.out.println("Dot Product is: " + dotProduct(a, b));
-        System.out.println("Dot Product is: " + dotProductHR(a, b, new Slicing()));
+        System.out.println("Dot Product using recursion is: " + dotProductHR(a, b, new Slicing()));
     }
 }
 

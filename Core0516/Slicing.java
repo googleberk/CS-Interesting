@@ -1,14 +1,16 @@
+package Core0516;
+
 import java.util.stream.IntStream;
 
-public class Slicing implements IntUnaryFunction{
+
+public class Slicing implements IntUnaryFunction {
 
     @Override
-    public int[] firstSlicing(int[] a){
-        int[] slice = IntStream.range(1, a.length).map(i -> a[i]).toArray();
+    public int[] firstSlicing(int[] a) {
 //        for(int i = 0; i < slice.length; i++){
 //            System.out.println(slice[i]);
 //        }
-        return slice;
+        return IntStream.range(1, a.length).map(i -> a[i]).toArray();
     }
 
 //    public static void main(String[] args) {
